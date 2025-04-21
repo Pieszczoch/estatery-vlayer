@@ -1,2 +1,43 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@theme {
+  --color-base-100: #f5f7fb;
+  --color-base-300: #d6d8e5;
+  --color-secondary-100: #8b8aff;
+  --color-secondary-300: #6851ff;
+  --color-secondary-600: #3d1efe;
+  --color-secondary-800: #3118d6;
+  --color-secondary-1000: #2511ae;
+  --color-gray-100: #b5b8cb;
+  --color-gray-200: #717788;
+
+  --spacing-content-mobile: calc(100dvh - 80px);
+
+  --text-2.5xl: 1.625rem;
+  --text-2.5xl--line-height: calc(2.25 / 1.5);
+}
+
+@theme inline {
+  --font-main: var(--font-plus-jakarta-sans);
+}
+
+body {
+  @apply font-main;
+}
+
+.hamburger-item {
+  @apply w-4.5 h-[2px] absolute mx-auto inset-x-0 bg-black transition-transform duration-300 ease-in-out;
+}
+
+.smooth-underline {
+  @apply relative;
+}
+
+.smooth-underline::before {
+  @apply absolute bottom-0 z-10 h-[1px] w-0 bg-black duration-300 content-[''];
+}
+
+.smooth-underline:hover::before {
+  @apply w-full;
+}
