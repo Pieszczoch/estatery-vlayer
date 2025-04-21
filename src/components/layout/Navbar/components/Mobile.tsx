@@ -41,7 +41,7 @@ const Mobile = () => (
                 leaveTo="h-0"
               >
                 <PopoverPanel className="z-50 mb-auto w-full max-w-full overflow-hidden">
-                  <RemoveScroll className="h-screen backdrop-blur-lg">
+                  <RemoveScroll className="h-screen backdrop-blur-2xl">
                     <div className="px-8 pt-12 pb-8">
                       <ul className="flex w-full flex-col gap-8.5">
                         {menuItems.map((item, index) => (

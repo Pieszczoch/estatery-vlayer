@@ -4,6 +4,7 @@
 @theme {
   --color-base-100: #f5f7fb;
   --color-base-300: #d6d8e5;
+  --color-base-600: #7b8191;
   --color-secondary-100: #8b8aff;
   --color-secondary-300: #6851ff;
   --color-secondary-600: #3d1efe;
@@ -11,11 +12,20 @@
   --color-secondary-1000: #2511ae;
   --color-gray-100: #b5b8cb;
   --color-gray-200: #717788;
+  --color-gray-300: #808080;
 
   --spacing-content-mobile: calc(100dvh - 80px);
 
+  --text-xxs: 0.5rem;
+  --text-xxs--line-height: calc(1 / 0.75);
   --text-2.5xl: 1.625rem;
   --text-2.5xl--line-height: calc(2.25 / 1.5);
+  --text-3.5xl: 2rem;
+  --text-3.5xl--line-height: calc(2.25 / 1.5);
+  --text-4.5xl: 2.5rem;
+  --text-4.5xl--line-height: calc(2.5 / 2.25);
+  --text-6.5xl: 4rem;
+  --text-6.5xl--line-height: calc(2.5 / 2.25);
 }
 
 @theme inline {
@@ -40,4 +50,12 @@ body {
 
 .smooth-underline:hover::before {
   @apply w-full;
+}
+
+.purple-circle {
+  @apply bg-[#8d8bfb] w-[473px] h-[488px] absolute rounded-full lg:bottom-0 -top-20 lg:top-auto;
+}
+
+.blur-circle {
+  @apply absolute w-[736px] h-[822px] bg-[#FFFFFFE5] backdrop-blur-[100px];
 }

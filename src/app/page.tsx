@@ -1,5 +1,11 @@
+import Header from "@/components/sections/Header";
+
 const Home = () => {
-  return <main className="h-[50vh] w-[100vw] bg-amber-300"></main>;
+  return (
+    <main>
+      <Header />
+    </main>
+  );
 };
 
 export default Home;
