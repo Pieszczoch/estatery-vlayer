@@ -9,7 +9,7 @@ import {
 import Card from "@/components/Card";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import useInViewMargin from "@/hooks/useMediaQuery";
+import useInViewMargin from "@/hooks/useInViewMargin";
 
 const Cards = () => {
   const { tabs, title, description } = content;
