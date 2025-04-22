@@ -9,8 +9,8 @@ import {
 import Link from "next/link";
 import { RemoveScroll } from "react-remove-scroll";
 import { menuItems } from "./content";
-import { Button } from "@/components/ui/button";
 import Logo from "@/components/Logo";
+import Button from "@/components/ui/Button";
 
 const Mobile = () => (
   <nav className="py-4 px-8 flex items-center justify-between lg:hidden z-50">

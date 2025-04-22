@@ -1,15 +1,12 @@
 "use client";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import { content } from "./content";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import Carousel from "@/components/ui/Carousel";
 import Card from "@/components/Card";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import useInViewMargin from "@/hooks/useInViewMargin";
+import Tabs from "@/components/ui/Tabs";
 
 const Cards = () => {
   const { tabs, title, description } = content;
@@ -29,7 +26,7 @@ const Cards = () => {
         hidden: {},
       }}
     >
-      <Tabs defaultValue={tabs[0].tab} className="py-16 gap-8">
+      <Tabs.Wrapper defaultValue={tabs[0].tab} className="py-16 gap-8">
         <motion.div
           variants={{
             hidden: { opacity: 0, scale: 0.95 },
@@ -37,13 +34,13 @@ const Cards = () => {
           }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <TabsList className="mx-auto">
+          <Tabs.List className="mx-auto">
             {tabs.map((item) => (
-              <TabsTrigger key={`${item.tab}-key`} value={item.tab}>
+              <Tabs.Trigger key={`${item.tab}-key`} value={item.tab}>
                 {item.tab}
-              </TabsTrigger>
+              </Tabs.Trigger>
             ))}
-          </TabsList>
+          </Tabs.List>
         </motion.div>
         <article className="text-center px-8 lg:px-0 space-y-6 max-w-[544px] mx-auto">
           <motion.h2
@@ -67,10 +64,10 @@ const Cards = () => {
             {description}
           </motion.p>
         </article>
-        <Carousel opts={{ dragFree: true }} className="mt-4 lg:hidden">
+        <Carousel.Wrapper opts={{ dragFree: true }} className="mt-4 lg:hidden">
           {tabs.map(({ tab, cards }) => (
-            <TabsContent value={tab} key={`${tab}-key`}>
-              <CarouselContent className="space-x-4 mx-8">
+            <Tabs.Content value={tab} key={`${tab}-key`}>
+              <Carousel.Content className="space-x-4 mx-8">
                 {cards.map((item, index) => (
                   <motion.div
                     key={`${item.name}-${index}-key`}
@@ -80,18 +77,18 @@ const Cards = () => {
                     }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    <CarouselItem>
+                    <Carousel.Item>
                       <Card badgeText="HOUSE" {...item} />
-                    </CarouselItem>
+                    </Carousel.Item>
                   </motion.div>
                 ))}
-              </CarouselContent>{" "}
-            </TabsContent>
+              </Carousel.Content>{" "}
+            </Tabs.Content>
           ))}
-        </Carousel>
+        </Carousel.Wrapper>
         <div className="hidden lg:block">
           {tabs.map(({ tab, cards }) => (
-            <TabsContent
+            <Tabs.Content
               value={tab}
               key={`${tab}-key`}
               className="flex items-center gap-8 justify-center"
@@ -111,10 +108,10 @@ const Cards = () => {
                   />
                 </motion.div>
               ))}
-            </TabsContent>
+            </Tabs.Content>
           ))}
         </div>
-      </Tabs>
+      </Tabs.Wrapper>
     </motion.section>
   );
 };
