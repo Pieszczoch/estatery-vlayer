@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { menuItems } from "./content";
 import Logo from "@/components/Logo";
+import Button from "@/components/ui/Button";
 
 const Desktop = () => (
   <nav className="hidden lg:flex border-b py-8 px-16 border-base-100 border-[1.5px]  justify-between">

@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 import { content } from "./content";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import useInViewMargin from "@/hooks/useInViewMargin";
+import Tabs from "@/components/ui/Tabs";
 
 const Testimonials = () => {
   const { title, description, opinions } = content;
@@ -25,7 +25,7 @@ const Testimonials = () => {
       }}
       className="bg-gradient-to-b from-white to-primary"
     >
-      <Tabs
+      <Tabs.Wrapper
         defaultValue={opinions[0].name}
         className="pt-4 pb-8 px-8 gap-8 lg:px-0 lg:py-8 lg:max-w-[736px] mx-auto"
       >
@@ -52,7 +52,7 @@ const Testimonials = () => {
           </motion.p>
         </article>
         {opinions.map(({ name, role, opinion }) => (
-          <TabsContent
+          <Tabs.Content
             key={`${name}-key`}
             value={name}
             className="text-center space-y-4"
@@ -77,9 +77,9 @@ const Testimonials = () => {
             >
               {name}, <span className="font-normal text-base-600">{role}</span>
             </motion.p>
-          </TabsContent>
+          </Tabs.Content>
         ))}
-        <TabsList className="mx-auto" asImg>
+        <Tabs.List className="mx-auto" asImg>
           {opinions.map((item, index) => (
             <motion.div
               key={`${item.name}-motion`}
@@ -89,13 +89,13 @@ const Testimonials = () => {
               }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
-              <TabsTrigger value={item.name} asImg>
+              <Tabs.Trigger value={item.name} asImg>
                 <Image src={item.avatar} alt={item.name} className="size-15" />
-              </TabsTrigger>
+              </Tabs.Trigger>
             </motion.div>
           ))}
-        </TabsList>
-      </Tabs>
+        </Tabs.List>
+      </Tabs.Wrapper>
     </motion.section>
   );
 };
