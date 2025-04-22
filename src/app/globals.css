@@ -5,14 +5,20 @@
   --color-base-100: #f5f7fb;
   --color-base-300: #d6d8e5;
   --color-base-600: #7b8191;
+  --color-secondary-0: #edeaff;
   --color-secondary-100: #8b8aff;
+  --color-secondary-200: #7065f0;
   --color-secondary-300: #6851ff;
+  --color-secondary-500: #6851ff;
   --color-secondary-600: #3d1efe;
+  --color-secondary-700: #3d1efe;
   --color-secondary-800: #3118d6;
   --color-secondary-1000: #2511ae;
   --color-gray-100: #b5b8cb;
   --color-gray-200: #717788;
   --color-gray-300: #808080;
+  --color-neutral-200: #eaecf4;
+  --color-tabs-hover: #edeafe;
 
   --spacing-content-mobile: calc(100dvh - 80px);
 
@@ -21,7 +27,7 @@
   --text-2.5xl: 1.625rem;
   --text-2.5xl--line-height: calc(2.25 / 1.5);
   --text-3.5xl: 2rem;
-  --text-3.5xl--line-height: calc(2.25 / 1.5);
+  --text-3.5xl--line-height: 1.25;
   --text-4.5xl: 2.5rem;
   --text-4.5xl--line-height: calc(2.5 / 2.25);
   --text-6.5xl: 4rem;
