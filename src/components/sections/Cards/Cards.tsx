@@ -1,11 +1,7 @@
 "use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { content } from "./content";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import Carousel from "@/components/ui/Carousel";
 import Card from "@/components/Card";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -67,10 +63,10 @@ const Cards = () => {
             {description}
           </motion.p>
         </article>
-        <Carousel opts={{ dragFree: true }} className="mt-4 lg:hidden">
+        <Carousel.Wrapper opts={{ dragFree: true }} className="mt-4 lg:hidden">
           {tabs.map(({ tab, cards }) => (
             <TabsContent value={tab} key={`${tab}-key`}>
-              <CarouselContent className="space-x-4 mx-8">
+              <Carousel.Content className="space-x-4 mx-8">
                 {cards.map((item, index) => (
                   <motion.div
                     key={`${item.name}-${index}-key`}
@@ -80,15 +76,15 @@ const Cards = () => {
                     }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    <CarouselItem>
+                    <Carousel.Item>
                       <Card badgeText="HOUSE" {...item} />
-                    </CarouselItem>
+                    </Carousel.Item>
                   </motion.div>
                 ))}
-              </CarouselContent>{" "}
+              </Carousel.Content>{" "}
             </TabsContent>
           ))}
-        </Carousel>
+        </Carousel.Wrapper>
         <div className="hidden lg:block">
           {tabs.map(({ tab, cards }) => (
             <TabsContent
