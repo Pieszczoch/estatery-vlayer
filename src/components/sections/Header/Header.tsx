@@ -6,7 +6,7 @@ import Card from "@/components/Card";
 import { cn } from "@/lib/utils";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import useInViewMargin from "@/hooks/useMediaQuery";
+import useInViewMargin from "@/hooks/useInViewMargin";
 
 const Header = () => {
   const { header, paragraph, card, stats } = content;
