@@ -4,7 +4,7 @@ import { content } from "./content";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import useInViewMargin from "@/hooks/useMediaQuery";
+import useInViewMargin from "@/hooks/useInViewMargin";
 
 const Testimonials = () => {
   const { title, description, opinions } = content;
