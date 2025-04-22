@@ -2,7 +2,9 @@
 @import "tw-animate-css";
 
 @theme {
+  --color-primary: #f4effe;
   --color-base-100: #f5f7fb;
+  --color-base-200: #eaecf4;
   --color-base-300: #d6d8e5;
   --color-base-600: #7b8191;
   --color-secondary-0: #edeaff;
