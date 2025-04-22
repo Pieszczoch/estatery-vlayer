@@ -8,7 +8,7 @@ const Testimonials = () => {
     <section className="bg-gradient-to-b from-white to-primary">
       <Tabs
         defaultValue={opinions[0].name}
-        className="py-4 px-8 gap-8 lg:px-0 lg:py-8 lg:max-w-[736px] mx-auto"
+        className="pt-4 pb-8 px-8 gap-8 lg:px-0 lg:py-8 lg:max-w-[736px] mx-auto"
       >
         <article className="text-center space-y-6 max-w-[352px] mx-auto">
           <h2 className="text-3.5xl lg:text-4.5xl font-bold">{title}</h2>

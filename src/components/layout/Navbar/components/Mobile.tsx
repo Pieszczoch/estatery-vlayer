@@ -1,4 +1,3 @@
-import IconLogo from "@/assets/icons/estatery.svg";
 import Hamburger from "./Hamburger";
 import { Fragment } from "react";
 import {
@@ -11,13 +10,11 @@ import Link from "next/link";
 import { RemoveScroll } from "react-remove-scroll";
 import { menuItems } from "./content";
 import { Button } from "@/components/ui/button";
+import Logo from "@/components/Logo";
 
 const Mobile = () => (
   <nav className="py-4 px-8 flex items-center justify-between lg:hidden">
-    <div className="flex gap-1 items-center h-10">
-      <IconLogo width={32} height={32} />
-      <p className="font-bold text-xl">Estatery</p>
-    </div>
+    <Logo />
     <div className="absolute left-0 top-0 z-30 w-full lg:hidden">
       <Popover>
         {({ open }) => {
