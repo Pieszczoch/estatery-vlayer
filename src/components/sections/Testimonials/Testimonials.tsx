@@ -1,18 +1,55 @@
+"use client";
 import Image from "next/image";
 import { content } from "./content";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import useInViewMargin from "@/hooks/useMediaQuery";
 
 const Testimonials = () => {
   const { title, description, opinions } = content;
+
+  const margin = useInViewMargin();
+
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: margin });
+
   return (
-    <section className="bg-gradient-to-b from-white to-primary">
+    <motion.section
+      ref={sectionRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={{
+        visible: { transition: { staggerChildren: 0.2 } },
+        hidden: {},
+      }}
+      className="bg-gradient-to-b from-white to-primary"
+    >
       <Tabs
         defaultValue={opinions[0].name}
         className="pt-4 pb-8 px-8 gap-8 lg:px-0 lg:py-8 lg:max-w-[736px] mx-auto"
       >
         <article className="text-center space-y-6 max-w-[352px] mx-auto">
-          <h2 className="text-3.5xl lg:text-4.5xl font-bold">{title}</h2>
-          <p className="text-base-600 font-medium">{description}</p>
+          <motion.h2
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+            className="text-3.5xl lg:text-4.5xl font-bold"
+          >
+            {title}
+          </motion.h2>
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-base-600 font-medium"
+          >
+            {description}
+          </motion.p>
         </article>
         {opinions.map(({ name, role, opinion }) => (
           <TabsContent
@@ -20,21 +57,46 @@ const Testimonials = () => {
             value={name}
             className="text-center space-y-4"
           >
-            <p className="text-xl font-medium">{opinion}</p>
-            <p className="font-bold">
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4 }}
+              className="text-xl font-medium"
+            >
+              {opinion}
+            </motion.p>
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="font-bold"
+            >
               {name}, <span className="font-normal text-base-600">{role}</span>
-            </p>
+            </motion.p>
           </TabsContent>
         ))}
         <TabsList className="mx-auto" asImg>
-          {opinions.map((item) => (
-            <TabsTrigger key={`${item.name}-key`} value={item.name} asImg>
-              <Image src={item.avatar} alt={item.name} className="size-15" />
-            </TabsTrigger>
+          {opinions.map((item, index) => (
+            <motion.div
+              key={`${item.name}-motion`}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1 },
+              }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+            >
+              <TabsTrigger value={item.name} asImg>
+                <Image src={item.avatar} alt={item.name} className="size-15" />
+              </TabsTrigger>
+            </motion.div>
           ))}
         </TabsList>
       </Tabs>
-    </section>
+    </motion.section>
   );
 };
 

@@ -26,7 +26,7 @@ const Card: FC<Props> = ({
     className={cn(
       "w-[303px] bg-white lg:w-[352px] relative",
       isPreview &&
-        "w-[166px] h-auto absolute z-50 top-1/4 left-6 lg:-left-12 drop-shadow-xl rounded-lg"
+        "w-[166px] h-auto absolute z-20 top-1/4 left-6 lg:-left-12 drop-shadow-xl rounded-lg"
     )}
   >
     <Badge badgeText={badgeText} isPreview={isPreview} />

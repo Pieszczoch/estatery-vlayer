@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import Logo from "@/components/Logo";
 
 const Mobile = () => (
-  <nav className="py-4 px-8 flex items-center justify-between lg:hidden">
+  <nav className="py-4 px-8 flex items-center justify-between lg:hidden z-50">
     <Logo />
     <div className="absolute left-0 top-0 z-30 w-full lg:hidden">
       <Popover>
