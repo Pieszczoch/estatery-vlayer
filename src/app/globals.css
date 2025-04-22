@@ -66,5 +66,5 @@ body {
 }
 
 .blur-circle {
-  @apply absolute w-[736px] h-[822px] bg-[#FFFFFFE5] backdrop-blur-[100px];
+  @apply absolute w-[736px] h-[822px] bg-white/90 backdrop-blur-[100px];
 }
