@@ -10,7 +10,7 @@ interface Props {
 const Badge: FC<Props> = ({ isPreview, badgeText }) => (
   <div
     className={cn(
-      "w-24 h-8 rounded-lg rounded-bl-none absolute bg-secondary-500 top-1/2 -left-2 flex items-center justify-center gap-1",
+      "w-fit h-8 px-4 rounded-lg rounded-bl-none absolute bg-secondary-500 top-1/2 -left-2 flex items-center justify-center gap-1",
       isPreview && "hidden"
     )}
   >

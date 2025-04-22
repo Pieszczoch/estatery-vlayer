@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import { FC } from "react";
-import IconHeart from "@/assets/icons/heart.svg";
 import { Badge } from "./components/Badge";
 import ButtonHeart from "./components/ButtonHeart";
 
