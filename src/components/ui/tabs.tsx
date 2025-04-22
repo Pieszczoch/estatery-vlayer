@@ -1,15 +1,15 @@
 "use client";
 
-import * as React from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 import { cn } from "@/lib/utils";
 import Circle from "@/components/Circle";
+import { ComponentProps } from "react";
 
 function Tabs({
   className,
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.Root>) {
+}: ComponentProps<typeof TabsPrimitive.Root>) {
   return (
     <TabsPrimitive.Root
       data-slot="tabs"
@@ -23,7 +23,7 @@ function TabsList({
   className,
   asImg = false,
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.List> & {
+}: ComponentProps<typeof TabsPrimitive.List> & {
   asImg?: boolean;
 }) {
   const defaultStyle =
@@ -43,7 +43,7 @@ function TabsTrigger({
   className,
   asImg = false,
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.Trigger> & {
+}: ComponentProps<typeof TabsPrimitive.Trigger> & {
   asImg?: boolean;
 }) {
   const defaultStyle = [
@@ -74,7 +74,7 @@ function TabsTrigger({
 function TabsContent({
   className,
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.Content>) {
+}: ComponentProps<typeof TabsPrimitive.Content>) {
   return (
     <TabsPrimitive.Content
       data-slot="tabs-content"
