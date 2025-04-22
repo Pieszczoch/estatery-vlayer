@@ -16,7 +16,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "rounded-lg py-3 px-8.5",
-        icon: "size-9",
+        icon: "size-12",
       },
     },
     defaultVariants: {
