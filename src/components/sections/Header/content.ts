@@ -1,4 +1,4 @@
-import house from "@/assets/images/third-apartament.png";
+import house from "@/assets/images/third-apartment.png";
 
 export const content = {
   header: "Buy, rent, or sell your property easily",

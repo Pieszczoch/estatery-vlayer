@@ -38,10 +38,7 @@ const Header = () => {
         </div>
       </article>
       <div className="relative h-[310px] lg:flex lg:w-1/2 lg:h-full justify-end">
-        <Card
-          {...card}
-          className="absolute z-50 top-1/4 left-6 lg:left-14 drop-shadow-xl"
-        />
+        <Card isPreview {...card} />
 
         <Image
           src={map}
