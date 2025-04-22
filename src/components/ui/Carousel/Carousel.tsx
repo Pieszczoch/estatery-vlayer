@@ -13,6 +13,7 @@ import {
   useState,
   KeyboardEvent,
   useEffect,
+  FC,
 } from "react";
 
 type CarouselApi = UseEmblaCarouselType[1];
@@ -48,7 +49,9 @@ function useCarousel() {
   return context;
 }
 
-function Carousel({
+type PropsCarousel = ComponentProps<"div"> & CarouselProps;
+
+const Carousel: FC<PropsCarousel> = ({
   orientation = "horizontal",
   opts,
   setApi,
@@ -56,7 +59,7 @@ function Carousel({
   className,
   children,
   ...props
-}: ComponentProps<"div"> & CarouselProps) {
+}) => {
   const [carouselRef, api] = useEmblaCarousel(
     {
       ...opts,
@@ -136,9 +139,12 @@ function Carousel({
       </div>
     </CarouselContext.Provider>
   );
-}
+};
 
-function CarouselContent({ className, ...props }: ComponentProps<"div">) {
+const CarouselContent: FC<ComponentProps<"div">> = ({
+  className,
+  ...props
+}) => {
   const { carouselRef, orientation } = useCarousel();
 
   return (
@@ -157,9 +163,9 @@ function CarouselContent({ className, ...props }: ComponentProps<"div">) {
       />
     </div>
   );
-}
+};
 
-function CarouselItem({ className, ...props }: ComponentProps<"div">) {
+const CarouselItem: FC<ComponentProps<"div">> = ({ className, ...props }) => {
   const { orientation } = useCarousel();
 
   return (
@@ -175,6 +181,6 @@ function CarouselItem({ className, ...props }: ComponentProps<"div">) {
       {...props}
     />
   );
-}
+};
 
-export { type CarouselApi, Carousel, CarouselContent, CarouselItem };
+export { Carousel, CarouselContent, CarouselItem };
