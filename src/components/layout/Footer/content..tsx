@@ -12,19 +12,19 @@ export const content = {
   social: [
     {
       url: "https://www.facebook.com/test",
-      icon: <IconFB className="[&>path]:fill-icon" />,
+      icon: <IconFB />,
     },
     {
       url: "https://www.instagram.com/test",
-      icon: <IconIG className="[&>path]:fill-icon" />,
+      icon: <IconIG />,
     },
     {
       url: "https://www.twitter.com/test",
-      icon: <IconTT className="[&>path]:fill-icon" />,
+      icon: <IconTT />,
     },
     {
       url: "https://www.linkedin.com/test",
-      icon: <IconLIN className="[&>path]:fill-icon" />,
+      icon: <IconLIN />,
     },
   ],
 };
