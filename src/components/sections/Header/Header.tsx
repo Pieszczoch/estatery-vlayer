@@ -13,7 +13,7 @@ const Header = () => {
       <article
         className={cn(
           "relative flex flex-col items-center gap-8 px-8 pt-8.5 pb-4.5 text-center",
-          "lg:text-left lg:w-1/2 lg:py-37 lg:px-16 lg:items-start"
+          "lg:text-left lg:w-full lg:py-37 lg:px-16 lg:items-start"
         )}
       >
         <h1 className="text-4.5xl font-bold lg:text-6.5xl lg:max-w-[544px]">
@@ -37,7 +37,7 @@ const Header = () => {
           ))}
         </div>
       </article>
-      <div className="relative h-[310px] lg:flex lg:w-1/2 lg:h-full justify-end">
+      <div className="relative h-[310px] lg:flex lg:w-[705px] lg:h-full justify-end">
         <Card isPreview {...card} />
 
         <Image
